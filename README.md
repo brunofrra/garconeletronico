@@ -1,6 +1,6 @@
 # Disciplina de Desenvolvimento Back-End
 
-Projeto da disciplina de Desenvolvimento Front-End da Pós Graduação da UFG.
+Projeto da disciplina de Desenvolvimento Back-End da Pós Graduação da UFG.
 ___
 ### Palavras chave:
 >Java, SpringBoot,Back-End, Classes

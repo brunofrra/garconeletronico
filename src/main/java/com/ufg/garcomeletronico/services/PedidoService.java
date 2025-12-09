@@ -99,4 +99,17 @@ public class PedidoService {
         e.setHoraEntrega(dto.getHoraEntrega());
         return e;
     }
+
+    public PedidoDTO criarPedido(PedidoDTO dto) {
+        Pedido pedido = EntityDTOConverter.toEntity(dto);
+        pedido = repository.save(pedido);
+        return EntityDTOConverter.toPedidoDTO(pedido);
+    }
+    
+    public PedidoDTO atualizarPedido(Long id, PedidoDTO dto) {
+        Pedido pedido = EntityDTOConverter.toEntity(dto);
+        pedido.setId(id);
+        pedido = repository.save(pedido);
+        return EntityDTOConverter.toPedidoDTO(pedido);
+    }
 }

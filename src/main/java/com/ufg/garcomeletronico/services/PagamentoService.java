@@ -61,4 +61,11 @@ public class PagamentoService {
         entity.setNumeroCheque(dto.getNumeroCheque());
         return entity;
     }
+
+    public void excluirPagamento(Long id) {
+        Pagamento p = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Pagamento não encontrado"));
+        repository.delete(p);
+    }
+
 }

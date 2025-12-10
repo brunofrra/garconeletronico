@@ -68,4 +68,17 @@ public class PagamentoService {
         repository.delete(p);
     }
 
+    public PagamentoDTO criarPagamento(PagamentoDTO dto) {
+        Pagamento p = EntityDTOConverter.toEntity(dto);
+        p = repository.save(p);
+        return EntityDTOConverter.toPagamentoDTO(p);
+    }
+
+    public PagamentoDTO atualizarPagamento(Long id, PagamentoDTO dto) {
+        Pagamento p = EntityDTOConverter.toEntity(dto);
+        p.setId(id);
+        p = repository.save(p);
+        return EntityDTOConverter.toPagamentoDTO(p);
+    }
+
 }
